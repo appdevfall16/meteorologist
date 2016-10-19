@@ -16,7 +16,9 @@ class ForecastController < ApplicationController
     # The longitude the user input is in the string @lng.
     # ==========================================================================
 
-  url_2 = "https://api.darksky.net/forecast/8bea9002983bcb8d6e353f0eaed5e860/#{@lat},#{@lng}"
+url_2 = "https://api.forecast.io/forecast/8bea9002983bcb8d6e353f0eaed5e860/#{@lat},#{@lng}"
+
+  # url_2 = "https://api.darksky.net/forecast/8bea9002983bcb8d6e353f0eaed5e860/#{@lat},#{@lng}"
   parsed_data_2 = JSON.parse(open(url_2).read)
 
   current_temp = parsed_data_2["currently"]["temperature"]

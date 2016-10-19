@@ -28,7 +28,10 @@ class MeteorologistController < ApplicationController
         latitude=location["lat"]
         longitude=location["lng"]
 
-    url_2 = "https://api.darksky.net/forecast/8bea9002983bcb8d6e353f0eaed5e860/#{latitude},#{longitude}"
+
+url_2 = "https://api.forecast.io/forecast/8bea9002983bcb8d6e353f0eaed5e860/#{latitude},#{longitude}"
+
+    # url_2 = "https://api.darksky.net/forecast/8bea9002983bcb8d6e353f0eaed5e860/#{latitude},#{longitude}"
     parsed_data_2 = JSON.parse(open(url_2).read)
 
     current_temp = parsed_data_2["currently"]["temperature"]
